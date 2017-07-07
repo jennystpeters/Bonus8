@@ -8,6 +8,9 @@ import java.util.Scanner;
 //Application that stores a list of 10 movies and displays them by category
 public class MovieCategories {
 
+    //Validate user inputs:
+    private static Validator Validator = new Validator();
+
     public static void main(String[] args) {
 
         ArrayList<Movie> movies = new ArrayList<>();
@@ -21,6 +24,9 @@ public class MovieCategories {
         String keepGoing = "y";
         String categorySelection = null;
         String titleSearch = null;
+        String categoryPrompt = null;
+        String titlePrompt = null;
+        String continuePrompt = null;
 
         for (int i = 0; i < 100; i++) {
             movies.add(MovieIO.getMovie(i + 1));
@@ -28,8 +34,8 @@ public class MovieCategories {
 
         while(keepGoing.equalsIgnoreCase("y")) {
 
-            System.out.print("What category are you interested in? (animated, drama, horror, or scifi): ");
-            categorySelection = entry.nextLine();
+            categoryPrompt = "What category are you interested in? (animated, drama, horror, or scifi): ";
+            categorySelection = Validator.getString(entry, categoryPrompt);
 
             for (Movie movie : movies) {
                 if (movie.getCategory().equalsIgnoreCase(categorySelection)) {
@@ -40,10 +46,9 @@ public class MovieCategories {
 
             //FIXME PICK BY NUMBER INSTEAD OF CATEGORY NAME
             //FIXME ALPHABETICAL ORDER
-            //FIXME VALIDATOR
 
-            System.out.print("\nEnter a search word to narrow down to a title you are looking for: ");
-            titleSearch = entry.nextLine();
+            titlePrompt = "\nEnter a search word to narrow down to a title you are looking for: ";
+            titleSearch = Validator.getString(entry, titlePrompt);
 
             for (Movie movie: categorized) {
                 if (containsIgnoreCase(movie.getTitle(), titleSearch)) {
@@ -51,8 +56,8 @@ public class MovieCategories {
                 }
             }
 
-            System.out.print("\nContinue? (y/n): ");
-            keepGoing = entry.nextLine();
+            continuePrompt = "\nContinue? (y/n): ";
+            keepGoing = Validator.getString(entry, continuePrompt);
         }
         System.out.println("\nGood-bye");
     }
