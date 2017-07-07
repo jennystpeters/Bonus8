@@ -11,6 +11,7 @@ public class MovieCategories {
     public static void main(String[] args) {
 
         ArrayList<Movie> movies = new ArrayList<>();
+        ArrayList<Movie> categorized = new ArrayList<>();
         Scanner entry = new Scanner(System.in);
 
         System.out.print("Welcome to the Movie List Application!\n\n");
@@ -33,13 +34,18 @@ public class MovieCategories {
             for (Movie movie : movies) {
                 if (movie.getCategory().equalsIgnoreCase(categorySelection)) {
                     System.out.println(movie.getTitle());
+                    categorized.add(movie);
                 }
             }
 
-            System.out.print("\nEnter a word to search for in titles: ");
+            //FIXME PICK BY NUMBER INSTEAD OF CATEGORY NAME
+            //FIXME ALPHABETICAL ORDER
+            //FIXME VALIDATOR
+
+            System.out.print("\nEnter a search word to narrow down to a title you are looking for: ");
             titleSearch = entry.nextLine();
 
-            for (Movie movie : movies) {
+            for (Movie movie: categorized) {
                 if (containsIgnoreCase(movie.getTitle(), titleSearch)) {
                     System.out.println(movie.getTitle());
                 }
