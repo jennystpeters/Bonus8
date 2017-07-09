@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0753392-7c0e-491a-9eeb-812544f51a7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Bonus8/MovieCategories.class" afterPath="$PROJECT_DIR$/out/production/Bonus8/MovieCategories.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Bonus8/Validator.class" afterPath="$PROJECT_DIR$/out/production/Bonus8/Validator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MovieCategories.java" afterPath="$PROJECT_DIR$/src/MovieCategories.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/src/MovieCategories.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="575">
-              <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="113" />
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -883,12 +880,12 @@
       <option name="presentableId" value="Default" />
       <updated>1499453800226</updated>
       <workItem from="1499453801503" duration="10417000" />
-      <workItem from="1499641227332" duration="1514000" />
+      <workItem from="1499641227332" duration="1616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11931000" />
+    <option name="totallyTimeSpent" value="12033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="35" width="1942" height="1056" extended-state="6" />
@@ -1020,7 +1017,7 @@
     <entry file="file://$PROJECT_DIR$/src/MovieCategories.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
-          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="113" />
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -36,8 +36,6 @@ public class MovieCategories {
 
         //FIXME ALPHABETICAL ORDER
 
-        //FIXME http://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/
-
         while (keepGoing.equalsIgnoreCase("y")) {
 
             titleSearch = null;
