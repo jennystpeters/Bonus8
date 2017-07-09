@@ -22,9 +22,11 @@ public class MovieCategories {
         System.out.println("There are 100 movies in this list.");
 
         String keepGoing = "y";
+        int categoryNumber = 0;
         String categorySelection = null;
-        String titleSearch = null;
+        String titleSearch;
         String categoryPrompt = null;
+        String invalidCategoryPrompt = null;
         String titlePrompt = null;
         String continuePrompt = null;
 
@@ -32,10 +34,35 @@ public class MovieCategories {
             movies.add(MovieIO.getMovie(i + 1));
         }
 
-        while(keepGoing.equalsIgnoreCase("y")) {
+        //FIXME ALPHABETICAL ORDER
 
-            categoryPrompt = "What category are you interested in? (animated, drama, horror, or scifi): ";
-            categorySelection = Validator.getString(entry, categoryPrompt);
+        //FIXME http://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/
+
+        while (keepGoing.equalsIgnoreCase("y")) {
+
+            titleSearch = null;
+            categorized.clear();
+
+            categoryPrompt = "Please enter the number for the category you are interested in ... 1. animated 2. drama 3. horror 4. scifi: ";
+            invalidCategoryPrompt = "Invalid entry. ";
+            categoryNumber = Validator.getInt(entry, categoryPrompt, invalidCategoryPrompt, 1, 4);
+
+            switch (categoryNumber) {
+                case 1:
+                    categorySelection = "animated";
+                    break;
+                case 2:
+                    categorySelection = "drama";
+                    break;
+                case 3:
+                    categorySelection = "horror";
+                    break;
+                case 4:
+                    categorySelection = "scifi";
+                    break;
+                default:
+                    break;
+            }
 
             for (Movie movie : movies) {
                 if (movie.getCategory().equalsIgnoreCase(categorySelection)) {
@@ -44,13 +71,10 @@ public class MovieCategories {
                 }
             }
 
-            //FIXME PICK BY NUMBER INSTEAD OF CATEGORY NAME
-            //FIXME ALPHABETICAL ORDER
-
             titlePrompt = "\nEnter a search word to narrow down to a title you are looking for: ";
             titleSearch = Validator.getString(entry, titlePrompt);
 
-            for (Movie movie: categorized) {
+            for (Movie movie : categorized) {
                 if (containsIgnoreCase(movie.getTitle(), titleSearch)) {
                     System.out.println(movie.getTitle());
                 }
@@ -62,8 +86,8 @@ public class MovieCategories {
         System.out.println("\nGood-bye");
     }
 
-    public static boolean containsIgnoreCase(String str, String searchStr)     {
-        if(str == null || searchStr == null) return false;
+    public static boolean containsIgnoreCase(String str, String searchStr) {
+        if (str == null || searchStr == null) return false;
 
         final int length = searchStr.length();
         if (length == 0)
