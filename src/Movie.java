@@ -1,12 +1,12 @@
 /**
  * Created by jenny on 7/7/2017.
  */
-public class Movie {
+public class Movie implements Comparable<Movie> {
 
     private String title;
     private String category;
 
-    //Provide a constructor that accepts a title and category as parameters and use the values passed to it to initialize its fields
+    //Provide a constructor that accepts a title and category as parameters and initialize fields
     public Movie(String title, String category) {
         this.title = title;
         this.category = category;
@@ -28,13 +28,19 @@ public class Movie {
         this.category = category;
     }
 
-    //Annotation to tell Java this override will take the place instead of the Java library toString
+    //Override to output ArrayList titles and categories rather than reference locations:
     @Override
     public String toString() {
 
         return String.format("%s %-45s %s %-45s", "Title: ", title, "Category: ", category);
     }
 
+    //Override to allow sorting of an ArrayList containing elements of a user-defined class type:
+    @Override
+    public int compareTo(Movie otherMovie) {
+        String title = ""; // title, this movie
 
+        return this.getTitle().compareTo(otherMovie.getTitle());
 
+    }
 }
